@@ -8,6 +8,15 @@ import { LoginForm } from "@/components/auth/LoginForm";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { Dashboard } from "@/components/dashboard/Dashboard";
 import { ImageUpload } from "@/components/upload/ImageUpload";
+import Reports from "./pages/Reports";
+import Leaderboard from "./pages/Leaderboard";
+import DiseaseDetection from "./pages/DiseaseDetection";
+import BullMatching from "./pages/BullMatching";
+import Chatbot from "./pages/Chatbot";
+import GeoMapping from "./pages/GeoMapping";
+import Tutorials from "./pages/Tutorials";
+import AdminAnalytics from "./pages/AdminAnalytics";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,16 +46,16 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/upload" element={<ImageUpload />} />
-        <Route path="/reports" element={<div className="p-8 text-center">Reports & History - Coming Soon</div>} />
-        <Route path="/leaderboard" element={<div className="p-8 text-center">Leaderboard - Coming Soon</div>} />
-        <Route path="/disease-detection" element={<div className="p-8 text-center">Disease Detection - Coming Soon</div>} />
-        <Route path="/bull-matching" element={<div className="p-8 text-center">Bull Matching - Coming Soon</div>} />
-        <Route path="/chatbot" element={<div className="p-8 text-center">AI Chatbot - Coming Soon</div>} />
-        <Route path="/mapping" element={<div className="p-8 text-center">Geo Mapping - Coming Soon</div>} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/disease-detection" element={<DiseaseDetection />} />
+        <Route path="/bull-matching" element={<BullMatching />} />
+        <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/mapping" element={<GeoMapping />} />
         <Route path="/community" element={<div className="p-8 text-center">Community - Coming Soon</div>} />
-        <Route path="/tutorials" element={<div className="p-8 text-center">Tutorials - Coming Soon</div>} />
-        <Route path="/admin" element={<div className="p-8 text-center">Admin Analytics - Coming Soon</div>} />
-        <Route path="/settings" element={<div className="p-8 text-center">Settings - Coming Soon</div>} />
+        <Route path="/tutorials" element={<Tutorials />} />
+        <Route path="/admin" element={<AdminAnalytics />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AppLayout>
