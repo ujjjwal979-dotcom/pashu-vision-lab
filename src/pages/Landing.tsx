@@ -299,8 +299,13 @@ const Landing = () => {
 
       {/* Footer */}
       <footer className="border-t bg-card/50 py-8">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; 2025 PashuMitra AI. All rights reserved.</p>
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground mb-2">
+            &copy; 2025 PashuMitra AI. All rights reserved.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Crafted with passion by <span className="font-semibold text-primary">Team MiraeNova</span>
+          </p>
         </div>
       </footer>
     </div>
