@@ -240,7 +240,7 @@ const Landing = () => {
                 className="text-lg group"
               >
                 <PlayCircle className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                Experience the Demo
+                Get Started 
               </Button>
               <Button 
                 size="lg" 
