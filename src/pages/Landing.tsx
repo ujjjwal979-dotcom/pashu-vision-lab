@@ -13,7 +13,20 @@ import {
   BookOpen,
   ArrowRight,
   CheckCircle2,
-  Sparkles
+  Sparkles,
+  Brain,
+  TrendingUp,
+  Target,
+  Heart,
+  Cpu,
+  Microscope,
+  PlayCircle,
+  Quote,
+  Star,
+  Upload,
+  ScanLine,
+  BarChart3,
+  Download
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -69,6 +82,61 @@ const Landing = () => {
     "Integrate with government schemes seamlessly"
   ];
 
+  const howItWorks = [
+    {
+      step: "1",
+      icon: Upload,
+      title: "Upload Images",
+      description: "Capture or upload multi-angle photos of your cattle using any device"
+    },
+    {
+      step: "2",
+      icon: ScanLine,
+      title: "AI Analysis",
+      description: "Our AI detects 65+ keypoints and analyzes body measurements instantly"
+    },
+    {
+      step: "3",
+      icon: BarChart3,
+      title: "Get Insights",
+      description: "Receive detailed ATC scores, health alerts, and breeding recommendations"
+    },
+    {
+      step: "4",
+      icon: Download,
+      title: "Track & Export",
+      description: "Monitor progress over time and export reports for government schemes"
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Rajesh Kumar",
+      role: "Dairy Farmer, Punjab",
+      avatar: "👨‍🌾",
+      quote: "PashuMitra AI has revolutionized how I manage my herd. The accuracy is incredible!"
+    },
+    {
+      name: "Dr. Priya Sharma",
+      role: "Veterinarian, Maharashtra",
+      avatar: "👩‍⚕️",
+      quote: "Early disease detection has saved countless animals. This technology is game-changing."
+    },
+    {
+      name: "Arun Patel",
+      role: "Cattle Breeder, Gujarat",
+      avatar: "🧑‍🌾",
+      quote: "The bull matching feature helped me improve my herd's genetics significantly."
+    }
+  ];
+
+  const techHighlights = [
+    { icon: Brain, label: "Advanced AI Models", color: "text-blue-500" },
+    { icon: Cpu, label: "Edge Computing", color: "text-purple-500" },
+    { icon: Microscope, label: "Computer Vision", color: "text-green-500" },
+    { icon: TrendingUp, label: "Predictive Analytics", color: "text-orange-500" }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -89,50 +157,119 @@ const Landing = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 md:py-32">
         <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
+        
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 5, 0]
+            }}
+            transition={{ duration: 5, repeat: Infinity }}
+            className="absolute top-20 left-10 w-16 h-16 bg-primary/10 rounded-2xl blur-xl"
+          />
+          <motion.div
+            animate={{ 
+              y: [0, 20, 0],
+              rotate: [0, -5, 0]
+            }}
+            transition={{ duration: 7, repeat: Infinity }}
+            className="absolute bottom-20 right-10 w-24 h-24 bg-primary/10 rounded-full blur-xl"
+          />
+        </div>
+
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-5xl mx-auto"
           >
             <motion.div
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6"
+              className="flex flex-wrap items-center justify-center gap-3 mb-8"
             >
-              <Sparkles className="w-4 h-4" />
-              <span className="text-sm font-medium">Revolutionary AI Technology</span>
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-medium">AI-Powered</span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full">
+                <Target className="w-4 h-4" />
+                <span className="text-sm font-medium">95% Accurate</span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-info/10 text-info px-4 py-2 rounded-full">
+                <Zap className="w-4 h-4" />
+                <span className="text-sm font-medium">Real-time Results</span>
+              </div>
             </motion.div>
 
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Transform Cattle Evaluation with{" "}
-              <span className="text-primary">Artificial Intelligence</span>
-            </h1>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight"
+            >
+              The Future of
+              <br />
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                Cattle Intelligence
+              </span>
+            </motion.h1>
 
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              PashuMitra AI brings precision, speed, and expertise to livestock management. 
-              Evaluate cattle traits, detect diseases, and make informed breeding decisions—all powered by advanced AI.
-            </p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto"
+            >
+              Harness the power of advanced AI to revolutionize livestock management. 
+              From precise trait analysis to disease prediction—all in seconds.
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            >
               <Button 
                 size="lg" 
                 onClick={() => navigate('/login')}
-                className="text-lg"
+                className="text-lg group"
               >
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <PlayCircle className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                Experience the Demo
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-lg"
               >
-                Learn More
+                See How It Works
               </Button>
-            </div>
+            </motion.div>
+
+            {/* Tech Highlights */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="flex flex-wrap items-center justify-center gap-8 pt-8 border-t border-border/50"
+            >
+              {techHighlights.map((tech, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center gap-2"
+                >
+                  <tech.icon className={`w-5 h-5 ${tech.color}`} />
+                  <span className="text-sm text-muted-foreground">{tech.label}</span>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -269,30 +406,158 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-20 bg-card/30">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Simple. Fast. Accurate.
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Get started with cattle evaluation in four easy steps
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            {/* Connection Lines for Desktop */}
+            <div className="hidden lg:block absolute top-1/4 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            
+            {howItWorks.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.15 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <Card className="h-full p-6 hover:shadow-elegant transition-all duration-300 hover:-translate-y-2">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative mb-6">
+                      <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-lg">
+                        <step.icon className="w-8 h-8 text-primary-foreground" />
+                      </div>
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm shadow-md">
+                        {step.step}
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {step.description}
+                    </p>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-primary rounded-2xl p-12 text-center"
+            className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-              Ready to Transform Your Livestock Management?
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Trusted by Farmers Across India
             </h2>
-            <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              Join PashuMitra AI today and experience the future of cattle evaluation
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              See what our users have to say about their experience
             </p>
-            <Button 
-              size="lg" 
-              variant="secondary"
-              onClick={() => navigate('/login')}
-              className="text-lg"
-            >
-              Start Free Trial
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full p-6 hover:shadow-elegant transition-all duration-300">
+                  <div className="flex flex-col h-full">
+                    <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                    <p className="text-foreground mb-6 flex-grow italic">
+                      &quot;{testimonial.quote}&quot;
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t border-border">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-2xl">
+                        {testimonial.avatar}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-foreground">{testimonial.name}</div>
+                        <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                      </div>
+                    </div>
+                    <div className="flex gap-1 mt-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-card/30">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative bg-gradient-primary rounded-3xl p-12 md:p-16 text-center overflow-hidden"
+          >
+            {/* Decorative Elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-foreground/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-foreground/10 rounded-full blur-3xl" />
+            
+            <div className="relative">
+              <motion.div
+                initial={{ scale: 0.9 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 bg-primary-foreground/20 text-primary-foreground px-4 py-2 rounded-full mb-6"
+              >
+                <Heart className="w-4 h-4" />
+                <span className="text-sm font-medium">Join 500+ Happy Users</span>
+              </motion.div>
+
+              <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-6">
+                Ready to Revolutionize
+                <br />
+                Your Cattle Management?
+              </h2>
+              <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 max-w-2xl mx-auto">
+                Experience the power of AI-driven livestock evaluation. 
+                Start making smarter decisions today.
+              </p>
+              <Button 
+                size="lg" 
+                variant="secondary"
+                onClick={() => navigate('/login')}
+                className="text-lg group shadow-xl hover:shadow-2xl transition-all"
+              >
+                Get Started Now
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
