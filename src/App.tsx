@@ -18,6 +18,7 @@ import Tutorials from "./pages/Tutorials";
 import AdminAnalytics from "./pages/AdminAnalytics";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import Landing from "./pages/Landing";
 
 const queryClient = new QueryClient();
 
@@ -38,7 +39,13 @@ const AppContent = () => {
   }
 
   if (!user) {
-    return <LoginForm />;
+    return (
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="*" element={<Landing />} />
+      </Routes>
+    );
   }
 
   return (

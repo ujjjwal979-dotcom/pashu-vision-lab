@@ -5,16 +5,18 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
-import { Loader2, Heart, User, Lock } from 'lucide-react';
+import { Loader2, Heart, User, Lock, ArrowLeft } from 'lucide-react';
 import { useAuth } from './AuthProvider';
 import { mockUsers } from '@/lib/mock-data';
 import { useToast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login, isLoading } = useAuth();
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +51,15 @@ export const LoginForm = () => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-md"
       >
+        <Button
+          variant="ghost"
+          onClick={() => navigate('/')}
+          className="mb-4"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to Home
+        </Button>
+        
         <Card className="shadow-strong border-0">
           <CardHeader className="text-center space-y-4">
             <motion.div
