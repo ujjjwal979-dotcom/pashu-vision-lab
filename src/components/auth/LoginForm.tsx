@@ -29,6 +29,7 @@ export const LoginForm = () => {
         description: "Successfully logged in to the cattle evaluation system.",
         variant: "default"
       });
+      navigate("/");
     } else {
       toast({
         title: "Login failed",
